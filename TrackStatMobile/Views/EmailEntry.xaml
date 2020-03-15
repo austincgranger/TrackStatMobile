@@ -17,11 +17,11 @@
 
     <ContentView.Content>
         <StackLayout>
-            <border:SfBorder BorderColor="{Binding Path=IsFocused, 
+            <border:SfBorder BorderColor="{Binding Path=isFocused, 
                 Source={x:Reference Email}, 
                 Converter={x:StaticResource ErrorValidationColorConverter}, 
-                ConverterParameter={x:Reference Email}}" 
-                             Style="{StaticResource SfBorderStyle}">
+                ConverterParameter={x:Reference Email}}"
+                Style="{StaticResource SfBorderStyle}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />

@@ -19,6 +19,7 @@ namespace TrackStatMobile.iOS.Controls
             if (this.Control != null)
             {
                 this.Control.BorderStyle = UITextBorderStyle.None;
+
             }
         }
     }

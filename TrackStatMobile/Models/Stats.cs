@@ -9,6 +9,6 @@ namespace TrackStatMobile.Models
         public string StatisticId { get; set; }
         public string IndependetVariable { get; set; }
         public string DependentVariable { get; set; }
-        public string[] StatisticValue { get; set; }
+        public string StatisticValue { get; set; }
     }
 }

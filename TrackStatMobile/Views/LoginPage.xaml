@@ -11,7 +11,8 @@
              xmlns:local1="clr-namespace:TrackStatMobile.Views"
              xmlns:converter="clr-namespace:TrackStatMobile.Converters"
              mc:Ignorable="d"
-             x:Class="TrackStatMobile.Views.LoginPage">
+             x:Class="TrackStatMobile.Views.LoginPage"
+             >
     <ContentPage.Resources>
         <ResourceDictionary>
             <converter:BooleanToColorConverter x:Key="ColorConverter" />
@@ -76,8 +77,9 @@
                         <!--  Entry to get password from user  -->
                         <border:SfBorder
                             Grid.Row="3"
-                            BorderColor="{Binding Source={x:Reference PasswordEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=0}"
-                            Style="{StaticResource SfBorderStyle}">
+                            BorderColor="{Binding Source={x:Reference PasswordEntry}, Path=isFocused, Converter={StaticResource ColorConverter}, ConverterParameter=0}"
+                            Style="{StaticResource sfBorderStyle}"
+                            >
                             <control:BorderlessEntry
                                 x:Name="PasswordEntry"
                                 IsPassword="True"

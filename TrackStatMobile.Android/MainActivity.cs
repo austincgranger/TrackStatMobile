@@ -15,6 +15,7 @@ namespace TrackStatMobile.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 

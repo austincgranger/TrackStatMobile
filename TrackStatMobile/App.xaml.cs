@@ -22,6 +22,7 @@ namespace TrackStatMobile
             MainPage = new AppShell();
         }
 
+        public static string BaseImageUrl { get; } = "https://cdn.syncfusion.com/essential-ui-kit-for-xamarin.forms/common/uikitimages/";
         protected override void OnStart()
         {
         }
