@@ -3,21 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TrackStatMobile.ViewModels;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace TrackStatMobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RegisterPage : ContentPage
+    public partial class ComparisonPage : ContentPage
     {
-        RegisterViewModel viewModel;
-        public RegisterPage()
+        public ComparisonPage()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new RegisterViewModel();
         }
     }
 }

@@ -3,23 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TrackStatMobile.ViewModels;
+
 using Xamarin.Forms;
-using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace TrackStatMobile.Views
 {
-    [Preserve(AllMembers = true)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class EmailEntry : ContentView
     {
-        LoginViewModel viewModel;
-        public LoginPage()
+        public EmailEntry()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new LoginViewModel();
         }
     }
 }

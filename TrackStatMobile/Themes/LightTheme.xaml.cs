@@ -3,23 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TrackStatMobile.ViewModels;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
-namespace TrackStatMobile.Views
+namespace TrackStatMobile.Themes
 {
     [Preserve(AllMembers = true)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class LightTheme
     {
-        LoginViewModel viewModel;
-        public LoginPage()
+        public LightTheme()
         {
             InitializeComponent();
-
-            BindingContext = viewModel = new LoginViewModel();
         }
     }
 }

@@ -3,56 +3,177 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:TrackStatMobile.Effects"
+             xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+             xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+             xmlns:control="clr-namespace:TrackStatMobile.Controls"
+             xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:local1="clr-namespace:TrackStatMobile.Views"
+             xmlns:converter="clr-namespace:TrackStatMobile.Converters"
              mc:Ignorable="d"
              x:Class="TrackStatMobile.Views.LoginPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToColorConverter x:Key="ColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView>
-            <StackLayout Spacing="10" >
+        <Grid>
+            <gradient:SfGradientView Style="{StaticResource SfGradientViewStyle}" />
 
-                <Label HeightRequest="110"  
-                          HorizontalOptions="FillAndExpand" 
-                          Text="FoodShare" 
-                          BackgroundColor="LightBlue"
-                          TextColor="White" 
-                          FontSize="40" 
-                          HorizontalTextAlignment="Center"
-                          VerticalTextAlignment="Center"/>
+            <ScrollView HorizontalOptions="Center">
+                <ScrollView.VerticalOptions>
+                    <OnIdiom
+                        x:TypeArguments="LayoutOptions"
+                        Default="CenterAndExpand"
+                        Phone="FillAndExpand" />
+                </ScrollView.VerticalOptions>
 
-                <Entry  Margin="20,40,20,0" 
-                         HeightRequest="50" 
-                         Placeholder="Email">
-                    <Entry.Effects>
-                        <local:BackgroundEntryEffect />
-                    </Entry.Effects>
-                </Entry>
+                <StackLayout
+                    Margin="{core:OnPlatformOrientationThickness PhonePortrait='20,32',
+                                                                 PhoneLandscape='150,32',
+                                                                 TabletPortrait='200,50',
+                                                                 TabletLandscape='300,50',
+                                                                 Desktop='30'}"
+                    Spacing="0"
+                    VerticalOptions="FillAndExpand"
+                    WidthRequest="{OnPlatform Default='-1',
+                                              UWP='350'}">
 
-                <Entry Margin="20,0,20,0" 
-                        HeightRequest="50" IsPassword="true"
-                        Placeholder="Password">
-                    <Entry.Effects>
-                        <local:BackgroundEntryEffect />
-                    </Entry.Effects>
-                </Entry>
+                    <Grid RowSpacing="0" VerticalOptions="CenterAndExpand">
 
-                <Button Margin="20,0,20,0" 
-                         HeightRequest="50" 
-                         TextColor="White" 
-                         Text="Login"  
-                         BackgroundColor="LightBlue"
-                         HorizontalOptions="FillAndExpand"/>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
 
-                <Button Margin="20,0,20,0" 
-                         HeightRequest="50" 
-                         TextColor="White" 
-                         Text="Register" 
-                         BackgroundColor="Gray"
-                         HorizontalOptions="FillAndExpand"/>
+                        <!--  Label to display the title of this page  -->
+                        <Label
+                            FontFamily="{StaticResource Montserrat-SemiBold}"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Style="{StaticResource LabelStyle}"
+                            Text="Log In" />
 
-                <Label Text="Forgot password" 
-                        HorizontalOptions="Center" 
-                        TextColor="LightBlue"/>
-            </StackLayout>
-        </ScrollView>
+                        <!--  Label to display the description of this page  -->
+                        <Label
+                            Grid.Row="1"
+                            Margin="0,8"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            HorizontalTextAlignment="Center"
+                            Style="{StaticResource LabelStyle}"
+                            Text="Let's get to work" />
+
+                        <!--  Entry to get email ID from user  -->
+                        <local1:EmailEntry Grid.Row="2" Padding="0,24" />
+
+                        <!--  Entry to get password from user  -->
+                        <border:SfBorder
+                            Grid.Row="3"
+                            BorderColor="{Binding Source={x:Reference PasswordEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=0}"
+                            Style="{StaticResource SfBorderStyle}">
+                            <control:BorderlessEntry
+                                x:Name="PasswordEntry"
+                                IsPassword="True"
+                                Placeholder="Password"
+                                Style="{StaticResource EntryStyle}"
+                                Text="{Binding Password}" />
+                        </border:SfBorder>
+
+                        <!--  Forgot password link  -->
+                        <Label
+                            x:Name="ForgotPasswordLabel"
+                            Grid.Row="4"
+                            Margin="0,16"
+                            FontFamily="{StaticResource Montserrat-SemiBold}"
+                            FontSize="12"
+                            HorizontalOptions="End"
+                            Text="FORGOT PASSWORD?"
+                            TextColor="White">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}" CommandParameter="{x:Reference ForgotPasswordLabel}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <!--  Login button  -->
+                        <buttons:SfButton
+                            Grid.Row="5"
+                            Margin="0,16"
+                            Command="{Binding LoginCommand}"
+                            Style="{StaticResource SfButtonStyle}"
+                            Text="LOG IN" />
+
+
+                        <Label
+                            Grid.Row="6"
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            HorizontalTextAlignment="Center"
+                            Style="{StaticResource LabelStyle}"
+                            Text="Or create an account using social media" />
+
+                        <!--  Login through facebook account  -->
+                        <buttons:SfButton
+                            Grid.Row="7"
+                            Margin="0,16,0,16"
+                            BackgroundColor="{DynamicResource FacebookBlue}"
+                            Command="{Binding SocialMediaLoginCommand}"
+                            CornerRadius="20"
+                            HeightRequest="40">
+                            <buttons:SfButton.Content>
+                                <StackLayout
+                                    HorizontalOptions="CenterAndExpand"
+                                    Orientation="Horizontal"
+                                    VerticalOptions="Center">
+                                    <Label
+                                        FontFamily="{StaticResource FontIcons}"
+                                        FontSize="18"
+                                        Text="&#xe735;"
+                                        TextColor="{DynamicResource Gray-White}"
+                                        VerticalTextAlignment="Center" />
+                                    <Label
+                                        FontFamily="{StaticResource Montserrat-Medium}"
+                                        FontSize="16"
+                                        Text="Login with Facebook"
+                                        TextColor="{DynamicResource Gray-White}" />
+                                </StackLayout>
+                            </buttons:SfButton.Content>
+                        </buttons:SfButton>
+
+                    </Grid>
+
+                    <StackLayout
+                        HorizontalOptions="Center"
+                        Orientation="Horizontal"
+                        Spacing="1"
+                        VerticalOptions="End"
+                        Padding="0, 48, 0, 0">
+
+                        <Label
+                            FontFamily="{StaticResource Montserrat-Medium}"
+                            HorizontalOptions="CenterAndExpand"
+                            HorizontalTextAlignment="Center"
+                            Style="{StaticResource LabelStyle}"
+                            Text="Don't have an account?"
+                            VerticalTextAlignment="Center" />
+
+                        <!--  Sign-up button  -->
+                        <buttons:SfButton
+                            Command="{Binding SignUpCommand}"
+                            CornerRadius="4"
+                            Style="{StaticResource SfFlatButtonStyle}"
+                            Text="Sign Up" />
+
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+        </Grid>
     </ContentPage.Content>
+
 </ContentPage>

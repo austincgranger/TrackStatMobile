@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:themes="clr-namespace:TrackStatMobile.Themes"
              mc:Ignorable="d"
              x:Class="TrackStatMobile.App">
     <Application.Resources>
-        <!--Colors-->
-        <Color x:Key="Primary">#4062BB</Color>
-        <Color x:Key="Secondary">#DB162F</Color>
-        <Color x:Key="Black">#0A0F0D</Color>
-        <Color x:Key="White">#FFFFFC</Color>
-        <Color x:Key="Background">#C4CBCA</Color>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <themes:LightTheme />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

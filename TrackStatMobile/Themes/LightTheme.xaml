@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:graphics="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
+                    xmlns:converters="clr-namespace:TrackStatMobile.Converters"
+                    mc:Ignorable="d"
+             x:Class="TrackStatMobile.Themes.LightTheme">
+    <Color x:Key="PrimaryColor">#f54e5e</Color>
+    <Color x:Key="PrimaryDarkColor">#d0424f</Color>
+    <Color x:Key="PrimaryDarkenColor">#ab3641</Color>
+    <Color x:Key="PrimaryLighterColor">#edcacd</Color>
+    <Color x:Key="PrimaryGradient">#e83f94</Color>
+    <Color x:Key="PrimaryLight">#ffe8f4</Color>
+    <Color x:Key="SecondaryGradient">#7644ad</Color>
+    <Color x:Key="Secondary">#d54381</Color>
+    <Color x:Key="Green">#7ed321</Color>
+    <Color x:Key="Red">#ff4a4a</Color>
+    <Color x:Key="Orange">#ff844a</Color>
+    <Color x:Key="Blue">#4acaff</Color>
+    <Color x:Key="HyperLink">#567cd7</Color>
+
+    <Color x:Key="Gray-100">#f6f7f8</Color>
+    <Color x:Key="Gray-200">#ebecef</Color>
+    <Color x:Key="Gray-300">#ced2d9</Color>
+    <Color x:Key="Gray-400">#b2b8c2</Color>
+    <Color x:Key="Gray-500">#959eac</Color>
+    <Color x:Key="Gray-600">#788396</Color>
+    <Color x:Key="Gray-700">#606a7b</Color>
+    <Color x:Key="Gray-800">#4a515e</Color>
+    <Color x:Key="Gray-900">#333942</Color>
+    <Color x:Key="Gray-Black">#000000</Color>
+    <Color x:Key="Gray-White">#ffffff</Color>
+
+    <OnPlatform x:Key="FontIcons" x:TypeArguments="x:String">
+        <OnPlatform.Platforms>
+            <On Platform="Android" Value="UIFontIcons.ttf#UIFontIcons" />
+            <On Platform="iOS" Value="UIFontIcons" />
+            <On Platform="UWP" Value="Assets/UIFontIcons.ttf#UIFontIcons" />
+        </OnPlatform.Platforms>
+    </OnPlatform>
+
+    <OnPlatform x:Key="Montserrat-SemiBold" x:TypeArguments="x:String">
+        <OnPlatform.Platforms>
+            <On Platform="Android" Value="Montserrat-SemiBold.ttf#Montserrat-SemiBold" />
+            <On Platform="iOS" Value="Montserrat-SemiBold" />
+            <On Platform="UWP" Value="Assets/Montserrat-SemiBold.ttf#Montserrat-SemiBold" />
+        </OnPlatform.Platforms>
+    </OnPlatform>
+
+    <OnPlatform x:Key="Montserrat-Regular" x:TypeArguments="x:String">
+        <OnPlatform.Platforms>
+            <On Platform="Android" Value="Montserrat-Regular.ttf#Montserrat-Regular" />
+            <On Platform="iOS" Value="Montserrat-Regular" />
+            <On Platform="UWP" Value="Assets/Montserrat-Regular.ttf#Montserrat-Regular" />
+        </OnPlatform.Platforms>
+    </OnPlatform>
+
+    <OnPlatform x:Key="Montserrat-Medium" x:TypeArguments="x:String">
+        <OnPlatform.Platforms>
+            <On Platform="Android" Value="Montserrat-Medium.ttf#Montserrat-Medium" />
+            <On Platform="iOS" Value="Montserrat-Medium" />
+            <On Platform="UWP" Value="Assets/Montserrat-Medium.ttf#Montserrat-Medium" />
+        </OnPlatform.Platforms>
+    </OnPlatform>
+
+    <OnPlatform x:Key="Montserrat-Bold" x:TypeArguments="x:String">
+        <OnPlatform.Platforms>
+            <On Platform="Android" Value="Montserrat-Bold.ttf#Montserrat-Bold" />
+            <On Platform="iOS" Value="Montserrat-Bold" />
+            <On Platform="UWP" Value="Assets/Montserrat-Bold.ttf#Montserrat-Bold" />
+        </OnPlatform.Platforms>
+    </OnPlatform>
+
+    <converters:StringToImageResourceConverter x:Key="ImageResourceConverter" />
+
+    <x:String x:Key="HomePageTitle">TrackStat</x:String>
+
+    <x:String x:Key="Description">Keep track of important statistics</x:String>
+
+    <!--  Common style for action bar icons  -->
+    <Style x:Key="ActionBarSettingIconStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-White}" />
+        <Setter Property="FontFamily" Value="{StaticResource FontIcons}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="Text" Value="&#xe72b;" />
+        <Setter Property="Padding" Value="{OnPlatform Default=8, UWP=6}" />
+        <Setter Property="Margin" Value="8" />
+        <Setter Property="HeightRequest" Value="{OnPlatform Default=32, UWP=40}" />
+        <Setter Property="WidthRequest" Value="{OnPlatform Default=32, UWP=40}" />
+    </Style>
+
+    <!--  Common style for action bar labels  -->
+    <Style x:Key="ActionBarLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-White}" />
+        <Setter Property="FontFamily" Value="{StaticResource Montserrat-Regular}" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+
+    <!--  Common style for action bar back button  -->
+    <Style x:Key="ActionBarBackButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-White}" />
+        <Setter Property="FontFamily" Value="{StaticResource FontIcons}" />
+        <Setter Property="Text" Value="&#xe709;" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+        <Setter Property="HeightRequest" Value="34" />
+        <Setter Property="WidthRequest" Value="34" />
+        <Setter Property="Margin" Value="8" />
+        <Setter Property="Padding" Value="8" />
+    </Style>
+
+    <!--  Common implicit style for ParallaxListView  -->
+    <Style TargetType="controls:ParallaxListView">
+        <Setter Property="BackgroundColor" Value="{DynamicResource Gray-White}" />
+        <Setter Property="SeparatorVisibility" Value="None" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Never" />
+    </Style>
+
+    <!--  Common style for list view item title  -->
+    <Style x:Key="ItemTitleStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-900}" />
+        <Setter Property="Text" Value="{Binding Name}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="{StaticResource Montserrat-SemiBold}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <!--  Common style for list view item description  -->
+    <Style x:Key="ItemDescriptionStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-700}" />
+        <Setter Property="Text" Value="{Binding Description}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="LineHeight" Value="1.25" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <!--  Common style for list view item image  -->
+    <Style x:Key="ItemImageStyle" TargetType="Image">
+        <Setter Property="Source" Value="{Binding Icon, Converter={StaticResource ImageResourceConverter}}" />
+        <Setter Property="HeightRequest" Value="80" />
+        <Setter Property="WidthRequest" Value="80" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <!--  Common style for list view item template count  -->
+    <Style x:Key="ItemCountLabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-700}" />
+        <Setter Property="Text" Value="{Binding TemplateCount}" />
+        <Setter Property="FontFamily" Value="{StaticResource Montserrat-Regular}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <!--  Common style for content page  -->
+    <Style x:Key="ContentPageStyle" TargetType="ContentPage">
+        <Setter Property="NavigationPage.HasNavigationBar" Value="False" />
+        <Setter Property="NavigationPage.HasBackButton" Value="False" />
+        <Setter Property="Shell.NavBarIsVisible" Value="False" />
+        <Setter Property="iOsSpecific:Page.UseSafeArea" Value="False" />
+    </Style>
+
+    <!--  Common style for close icons  -->
+    <Style x:Key="CloseIconStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="{DynamicResource Gray-700}" />
+        <Setter Property="FontFamily" Value="{StaticResource FontIcons}" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="Text" Value="&#xe724;" />
+    </Style>
+
+    <!--  Common style for header icon  -->
+    <Style x:Key="HeaderIconStyle" TargetType="Image">
+        <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+        <Setter Property="HeightRequest" Value="35" />
+        <Setter Property="Margin" Value="0,0,8,0" />
+        <Setter Property="Aspect" Value="AspectFit" />
+        <Setter Property="Source" Value="HeaderIcon.png" />
+    </Style>
+
+    <!--  Common style for gradient buttons  -->
+    <Style x:Key="SfGradientButtonStyle" TargetType="buttons:SfButton">
+        <Setter Property="BackgroundGradient">
+            <Setter.Value>
+                <graphics:SfLinearGradientBrush>
+                    <graphics:SfLinearGradientBrush.GradientStops>
+                        <graphics:SfGradientStop Offset="0" Color="{DynamicResource PrimaryColor}" />
+                        <graphics:SfGradientStop Offset="1" Color="{DynamicResource PrimaryGradient}" />
+                    </graphics:SfLinearGradientBrush.GradientStops>
+                </graphics:SfLinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="TextColor" Value="{DynamicResource Gray-White}" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+    </Style>
+</ResourceDictionary>

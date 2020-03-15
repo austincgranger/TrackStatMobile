@@ -24,6 +24,8 @@ namespace TrackStatMobile.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
+            Syncfusion.XForms.Android.Core.Core.Init(this);
+
             var dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "database.sqlite");
             LoadApplication(new App(dbPath));
         }

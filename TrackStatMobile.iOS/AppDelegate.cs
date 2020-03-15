@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 
 using Foundation;
+using Syncfusion.XForms.iOS.Buttons;
+using Syncfusion.XForms.iOS.Core;
 using UIKit;
 
 namespace TrackStatMobile.iOS
@@ -25,7 +27,8 @@ namespace TrackStatMobile.iOS
         {
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
-
+            SfButtonRenderer.Init();
+            Core.Init();
             var libPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "..", "Library", "data");
             if (!Directory.Exists(libPath))
             {
