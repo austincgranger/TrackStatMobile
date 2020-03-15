@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TrackStatMobile.ViewModels
 {
-    class LoginViewModel : BaseViewModel
+    class RegisterViewModel : BaseViewModel
     {
     }
 }

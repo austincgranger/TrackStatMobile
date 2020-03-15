@@ -10,14 +10,14 @@ using Xamarin.Forms.Xaml;
 namespace TrackStatMobile.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class RegisterPage : ContentPage
     {
-        LoginViewModel viewModel;
-        public LoginPage()
+        RegisterViewModel viewModel;
+        public RegisterPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new LoginViewModel();
+            BindingContext = viewModel = new RegisterViewModel();
         }
     }
 }

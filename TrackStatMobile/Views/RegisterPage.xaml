@@ -5,11 +5,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:TrackStatMobile.Effects"
              mc:Ignorable="d"
-             x:Class="TrackStatMobile.Views.LoginPage">
+             x:Class="TrackStatMobile.Views.RegisterPage">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Spacing="10" >
-
                 <Label HeightRequest="110"  
                           HorizontalOptions="FillAndExpand" 
                           Text="FoodShare" 
@@ -19,7 +18,25 @@
                           HorizontalTextAlignment="Center"
                           VerticalTextAlignment="Center"/>
 
-                <Entry  Margin="20,40,20,0" 
+                <StackLayout Orientation="Horizontal" Padding="20,40,20,0">
+                    <Entry HeightRequest="50" 
+                         HorizontalOptions="FillAndExpand"
+                         Placeholder="Name">
+                        <Entry.Effects>
+                            <local:BackgroundEntryEffect />
+                        </Entry.Effects>
+                    </Entry>
+
+                    <Entry HeightRequest="50" 
+                                  HorizontalOptions="FillAndExpand"
+                                 Placeholder="Last Name">
+                        <Entry.Effects>
+                            <local:BackgroundEntryEffect />
+                        </Entry.Effects>
+                    </Entry>
+                </StackLayout>
+
+                <Entry  Margin="20,0,20,0" 
                          HeightRequest="50" 
                          Placeholder="Email">
                     <Entry.Effects>
@@ -38,18 +55,11 @@
                 <Button Margin="20,0,20,0" 
                          HeightRequest="50" 
                          TextColor="White" 
-                         Text="Login"  
-                         BackgroundColor="LightBlue"
-                         HorizontalOptions="FillAndExpand"/>
-
-                <Button Margin="20,0,20,0" 
-                         HeightRequest="50" 
-                         TextColor="White" 
-                         Text="Register" 
+                         Text="Register"  
                          BackgroundColor="Gray"
                          HorizontalOptions="FillAndExpand"/>
 
-                <Label Text="Forgot password" 
+                <Label Margin="0,0,0,20" Text="I have an account" VerticalOptions="EndAndExpand"
                         HorizontalOptions="Center" 
                         TextColor="LightBlue"/>
             </StackLayout>
