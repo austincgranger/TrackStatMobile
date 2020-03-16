@@ -79,7 +79,10 @@
             </OnPlatform>
             
             <converters:StringToImageResourceConverter x:Key="ImageResourceConverter" />
-            
+
+            <converters:StringToBooleanConverter x:Key="StringToBooleanConverter" />
+            <converters:ErrorValidationColorConverter x:Key="ErrorValidationColorConverter" PageVariantParameter="0" />
+
             <x:String x:Key="HomePageTitle">TrackStat</x:String>
 
             <x:String x:Key="Description">Keep track of important statistics</x:String>
@@ -219,6 +222,7 @@
                 WinPhone="LoginBackground.png" />
                 </Setter>
             </Style>-->
+            
             <!--  Common style for buttons  -->
             <Style x:Key="SfButtonStyle" TargetType="buttons:SfButton">
                 <Setter Property="BackgroundGradient">

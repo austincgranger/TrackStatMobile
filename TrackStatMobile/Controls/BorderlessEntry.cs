@@ -12,10 +12,10 @@ namespace TrackStatMobile.Controls
     [Preserve(AllMembers = true)]
     public class BorderlessEntry : Entry
     {
-        public bool isFocused { get; set; }
+        
         public BorderlessEntry()
         {
-            isFocused = IsFocused;
+            
         }
     }
 

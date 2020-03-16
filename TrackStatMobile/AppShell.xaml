@@ -11,7 +11,7 @@
     <!-- 
         Styles and Resources 
     -->
-    <Shell.Resources>
+    <!--<Shell.Resources>
         <ResourceDictionary>
             <Color x:Key="NavigationPrimary">#2196F3</Color>
             <Style x:Key="BaseStyle" TargetType="Element">
@@ -27,17 +27,16 @@
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
         </ResourceDictionary>
-    </Shell.Resources>
+    </Shell.Resources>-->
 
-    <!-- Your Pages -->
+    <!-- Your Pages --><!--
     <TabBar>
         <Tab Title="Browse" Icon="tab_feed.png">
             <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" />
         </Tab>
-        <Tab Title="About" Icon="tab_about.png">
-            <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" />
-        </Tab>
-    </TabBar>
+    </TabBar>-->
+
+    <local:LoginPage />
 
     <!-- Optional Templates 
     // These may be provided inline as below or as separate classes.

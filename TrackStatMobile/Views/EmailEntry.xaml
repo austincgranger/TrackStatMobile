@@ -8,16 +8,10 @@
              xmlns:converter="clr-namespace:TrackStatMobile.Converters"
              mc:Ignorable="d"
              x:Class="TrackStatMobile.Views.EmailEntry">
-    <ContentView.Resources>
-        <ResourceDictionary>
-            <converter:StringToBooleanConverter x:Key="StringToBooleanConverter" />
-            <converter:ErrorValidationColorConverter x:Key="ErrorValidationColorConverter" PageVariantParameter="0" />
-        </ResourceDictionary>
-    </ContentView.Resources>
 
     <ContentView.Content>
         <StackLayout>
-            <border:SfBorder BorderColor="{Binding Path=isFocused, 
+            <border:SfBorder BorderColor="{Binding Path=IsFocused, 
                 Source={x:Reference Email}, 
                 Converter={x:StaticResource ErrorValidationColorConverter}, 
                 ConverterParameter={x:Reference Email}}"
@@ -32,7 +26,7 @@
                         x:Name="Email"
                         Placeholder="Email" Keyboard="Email"
                         Style="{StaticResource EntryStyle}"
-                        Text="{Binding Email}" />
+                        Text="{StaticResource User.UserEmail}" />
 
                     <Label
                         Margin="15,0"

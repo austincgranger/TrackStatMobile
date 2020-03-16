@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using TrackStatMobile.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -39,6 +40,7 @@ namespace TrackStatMobile.ViewModels
         /// Gets or sets the command that is executed when the social media login button is clicked.
         /// </summary>
         public Command SocialMediaLoginCommand { get; set; }
+        public User User { get; set; }
 
         #endregion
 
@@ -112,6 +114,16 @@ namespace TrackStatMobile.ViewModels
             SignUpCommand = new Command(SignUpClicked);
             ForgotPasswordCommand = new Command(ForgotPasswordClicked);
             SocialMediaLoginCommand = new Command(SocialLoggedIn);
+            User = new User();
+        }
+
+        public LoginViewModel(User user)
+        {
+            LoginCommand = new Command(LoginClicked);
+            SignUpCommand = new Command(SignUpClicked);
+            ForgotPasswordCommand = new Command(ForgotPasswordClicked);
+            SocialMediaLoginCommand = new Command(SocialLoggedIn);
+            User = user;
         }
         #endregion
 

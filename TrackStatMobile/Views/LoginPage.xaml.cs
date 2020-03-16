@@ -19,7 +19,8 @@ namespace TrackStatMobile.Views
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new LoginViewModel();
+            viewModel = new LoginViewModel();
+            BindingContext = viewModel;
         }
     }
 }
