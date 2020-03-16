@@ -84,6 +84,7 @@
 
             <converters:StringToBooleanConverter x:Key="StringToBooleanConverter" />
             <converters:ErrorValidationColorConverter x:Key="ErrorValidationColorConverter" PageVariantParameter="0" />
+            <converters:BooleanToColorConverter x:Key="BooleanToColorConverter" />
 
             <x:String x:Key="HomePageTitle">TrackStat</x:String>
 
