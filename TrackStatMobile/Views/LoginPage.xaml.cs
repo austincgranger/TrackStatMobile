@@ -21,6 +21,7 @@ namespace TrackStatMobile.Views
 
             viewModel = new LoginViewModel();
             BindingContext = viewModel;
+            Shell.SetNavBarIsVisible(this, false);
         }
     }
 }
