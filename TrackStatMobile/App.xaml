@@ -14,11 +14,13 @@
              >
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="PrimaryColor">#f54e5e</Color>
+            
+            <!--Primary color and gradient hit the button-->
+            <Color x:Key="PrimaryColor">#38ef7d</Color>
             <Color x:Key="PrimaryDarkColor">#d0424f</Color>
             <Color x:Key="PrimaryDarkenColor">#ab3641</Color>
             <Color x:Key="PrimaryLighterColor">#edcacd</Color>
-            <Color x:Key="PrimaryGradient">#e83f94</Color>
+            <Color x:Key="PrimaryGradient">#11998e</Color>
             <Color x:Key="PrimaryLight">#ffe8f4</Color>
             <Color x:Key="SecondaryGradient">#7644ad</Color>
             <Color x:Key="Secondary">#d54381</Color>
@@ -206,8 +208,8 @@
 
             <Color x:Key="EntryPlaceholderColor">#A0FFFFFF</Color>
             <Color x:Key="BorderBackgroundColor">#20FFFFFF</Color>
-            <Color x:Key="GradientStartColor">#012E8B</Color>
-            <Color x:Key="GradientEndColor">#3F0041</Color>
+            <Color x:Key="GradientStartColor">#0F2027</Color>
+            <Color x:Key="GradientEndColor">#2C5364</Color>
             <Color x:Key="FacebookBlue">#4267B2</Color>
 
             <x:String x:Key="DropDownButtonIcon">&#xe70b;</x:String>
