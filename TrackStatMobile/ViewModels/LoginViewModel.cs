@@ -9,6 +9,7 @@ using Xamarin.Forms.Internals;
 
 namespace TrackStatMobile.ViewModels
 {
+    // for android? all members of this type are preserved? Q
     [Preserve(AllMembers = true)]
     class LoginViewModel : BaseViewModel
     {
