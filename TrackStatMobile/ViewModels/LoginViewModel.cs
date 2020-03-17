@@ -31,6 +31,7 @@ namespace TrackStatMobile.ViewModels
 
  
         public Command SocialMediaLoginCommand { get; set; }
+        public User UserProp { get; set; }
 
         #endregion
 
@@ -100,7 +101,7 @@ namespace TrackStatMobile.ViewModels
         #region Ctor
         public LoginViewModel()
         {
-            LoginCommand = new Command(LoginClicked);
+            LoginCommand = new Command<User>(async (UserProp) => await LoginClicked(UserProp));
             SignUpCommand = new Command(SignUpClicked);
             ForgotPasswordCommand = new Command(ForgotPasswordClicked);
             SocialMediaLoginCommand = new Command(SocialLoggedIn);
@@ -110,9 +111,21 @@ namespace TrackStatMobile.ViewModels
 
         #region Methods
 
-        private void LoginClicked(object obj)
+        // Ask calvin
+        private async Task LoginClicked(User userProp)
         {
-            // Do something
+            string email = Email;
+            string password = Password;
+            //var keyValues = new List<KeyValuePair<string, string>>
+            //{
+            //    new KeyValuePair<string, string>(Email, userProp.UserEmail),
+            //    new KeyValuePair<string, string>(Password, userProp.UserPassword)
+            //};
+
+            if (userProp.UserEmail.Contains(email) && userProp.UserPassword.Contains(password))
+            {
+                // Navigation to HomePage
+            }
         }
         private async void SignUpClicked()
         {
@@ -131,7 +144,7 @@ namespace TrackStatMobile.ViewModels
 
         private void SocialLoggedIn(object obj)
         {
-            // Do something
+            // TODO
         }
 
         #endregion

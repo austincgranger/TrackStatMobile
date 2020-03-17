@@ -72,7 +72,52 @@
                             Text="Let's get to work" />
 
                         <!--  Entry to get email ID from user  -->
-                        <local1:EmailEntry Grid.Row="2" Padding="0,24" />
+                        <StackLayout Grid.Row="2" Padding="0, 24">
+                            <border:SfBorder BorderColor="{Binding Path=IsFocused, 
+                                    Source={x:Reference Email}, 
+                                    Converter={x:StaticResource ErrorValidationColorConverter}, 
+                                    ConverterParameter={x:Reference Email}}"
+                                            Style="{StaticResource SfBorderStyle}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <control:BorderlessEntry
+                                         x:Name="Email"
+                                     Placeholder="Email" Keyboard="Email"
+                                         Style="{StaticResource EntryStyle}"
+                                        Text="{Binding Email}" />
+
+                                    <Label
+                                        Margin="15,0"
+                                     FontFamily="{StaticResource FontIcons}"
+                                     FontSize="18"
+                                     HorizontalOptions="EndAndExpand"
+                                     HorizontalTextAlignment="End"
+                                     IsVisible="{Binding Path=IsVisible, Source={x:Reference ValidationLabel}}"
+                                     Text="&#xe707;"
+                                     TextColor="{DynamicResource Red}"
+                                     VerticalOptions="Center" />
+
+
+                                </Grid>
+                            </border:SfBorder>
+
+                            <Label
+                                        x:Name="ValidationLabel"
+                                        Margin="15,-5,0,0"
+                                        FontSize="12"
+                                        IsVisible="{Binding Path=IsFocused, 
+                                        Source={x:Reference Email}, 
+                                        Converter={StaticResource StringToBooleanConverter}, 
+                                        ConverterParameter={x:Reference Email}}"
+                                        Text="Please enter the valid e-mail"
+                                        TextColor="{DynamicResource Red}"
+                                        VerticalOptions="FillAndExpand" />
+
+                        </StackLayout>
 
                         <!--  Entry to get password from user  -->
                         <border:SfBorder
