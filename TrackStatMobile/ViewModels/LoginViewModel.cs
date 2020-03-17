@@ -36,7 +36,7 @@ namespace TrackStatMobile.ViewModels
 
         #region Prop
 
-        public User UserProp { get; set; }
+        public User ThisUser { get; }
         public string Email
         {
             get
@@ -101,7 +101,7 @@ namespace TrackStatMobile.ViewModels
         #region Ctor
         public LoginViewModel()
         {
-            LoginCommand = new Command<User>((UserProp) => LoginClicked(UserProp));
+            LoginCommand = new Command<User>((TnisUser) => LoginClicked(ThisUser));
             SignUpCommand = new Command(SignUpClicked);
             ForgotPasswordCommand = new Command(ForgotPasswordClicked);
             SocialMediaLoginCommand = new Command(SocialLoggedIn);
@@ -111,15 +111,11 @@ namespace TrackStatMobile.ViewModels
 
         #region Methods
 
-        private void LoginClicked(User userProp)
+        private void LoginClicked(User ThisUser)
         {
-            userProp = UserProp;
-            string email = Email;
-            string password = Password;
-
-            if (userProp.UserEmail.Contains(email) && userProp.UserPassword.Contains(password))
+            if (Email != null && Password != null)
             {
-                // TODO PERFORM NAV
+                // nav with ThisUser as a parameter
             }
         }
         private async void SignUpClicked()
