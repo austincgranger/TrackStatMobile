@@ -134,12 +134,14 @@ namespace TrackStatMobile.ViewModels
             label.BackgroundColor = Color.FromHex("#70FFFFFF");
             await Task.Delay(100);
             label.BackgroundColor = Color.Transparent;
+
+            // TODO perform Nav
         }
 
 
         private void SocialLoggedIn(object obj)
         {
-            // Do something
+            // TODO perform validation stuff
         }
 
         #endregion
