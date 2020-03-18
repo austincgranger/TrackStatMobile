@@ -8,6 +8,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.2" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.Cards" Version="17.4.0.55" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="17.4.0.55" />
     <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="17.4.0.55" />
     <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="17.4.0.55" />
@@ -19,6 +20,9 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Views\EmailEntry.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\LoginPage.xaml">

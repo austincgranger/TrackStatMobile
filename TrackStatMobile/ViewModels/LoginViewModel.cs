@@ -102,7 +102,7 @@ namespace TrackStatMobile.ViewModels
         #region Ctor
         public LoginViewModel()
         {
-            LoginCommand = new Command<User>((TnisUser) => LoginClicked(ThisUser));
+            LoginCommand = new Command<User>(async (TnisUser) => await LoginClicked(ThisUser));
             SignUpCommand = new Command(SignUpClicked);
             ForgotPasswordCommand = new Command(ForgotPasswordClicked);
             SocialMediaLoginCommand = new Command(SocialLoggedIn);
@@ -112,12 +112,10 @@ namespace TrackStatMobile.ViewModels
 
         #region Methods
 
-        private void LoginClicked(User ThisUser)
+        private async Task LoginClicked(User ThisUser)
         {
-            if (Email != null && Password != null)
-            {
-                // nav with ThisUser as a parameter
-            }
+         
+            await Application.Current.MainPage.Navigation.PushAsync(new HomePage(ThisUser));
         }
         private async void SignUpClicked()
         {

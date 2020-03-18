@@ -106,6 +106,14 @@
                 <Setter Property="FontFamily" Value="{StaticResource Montserrat-Regular}" />
                 <Setter Property="FontSize" Value="16" />
             </Style>
+            
+                <Style x:Key="ProfileBorderStyle" TargetType="border:SfBorder">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="BorderColor" Value="{DynamicResource Gray-White}" />
+        <Setter Property="CornerRadius" Value="20" />
+    </Style>
 
             <!--  Common style for action bar back button  -->
             <Style x:Key="ActionBarBackButtonStyle" TargetType="Button">
